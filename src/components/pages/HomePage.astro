@@ -1,0 +1,23 @@
+---
+import Proyects from '@/components/Proyects.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getMessages } from '@/i18n/ui'
+import Hero from '../Hero.astro'
+import AboutMe from '../AboutMe.astro'
+import Experience from '../Experience.astro'
+import Skills from '../Skills.astro'
+
+export interface Props {
+  locale?: string
+}
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<Layout title={t.siteTitle} description={t.siteDescription}>
+  <Hero locale={locale} />
+  <AboutMe locale={locale} />
+  <Skills locale={locale} />
+  <Proyects locale={locale} />
+  <Experience locale={locale} />
+</Layout>

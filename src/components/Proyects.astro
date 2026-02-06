@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content'
+import { getMessages, normalizeLocale, type AppLocale } from '../i18n/ui'
+
+const locale = normalizeLocale(Astro.props.locale ?? Astro.currentLocale)
+const t = getMessages(locale)
+
+const proyects = await getCollection('proyects', (entry) =>
+  entry.id.startsWith(`${locale}/`),
+)
+
+const baseUrl = locale === 'es' ? '/proyecto' : '/en/proyecto'
+---
+
+<section class='mt-20' aria-label={t.featuredListLabel}>
+  <div class='max-w-6xl px-4 mx-auto'>
+    <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
+      <div class='grid gap-4'>
+        <div>
+          <h2 class='text-4xl font-bold mb-6'>
+            {t.featuredListLabel}
+          </h2>
+          <p class='text-gray-500'>soluciones para experiencias digitales</p>
+        </div>
+        {
+          proyects.map((proyect) => {
+            const routeId = proyect.slug.replace(`${locale}/`, '')
+            return (
+              <article class='proyect-card'>
+                <a href={`${baseUrl}/${routeId}`} rel='noopener noreferrer'>
+                  <img
+                    transition:name={`img-${routeId}`}
+                    src={proyect.data.image}
+                    alt={proyect.data.title}
+                  />
+                </a>
+              </article>
+            )
+          })
+        }
+      </div>
+      <div class='grid gap-4'>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
+            alt=''
+          />
+        </div>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
+            alt=''
+          />
+        </div>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
+            alt=''
+          />
+        </div>
+      </div>
+      <div class='grid gap-4'>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
+            alt=''
+          />
+        </div>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
+            alt=''
+          />
+        </div>
+        <div>
+          <img
+            class='h-auto max-w-full rounded-base'
+            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

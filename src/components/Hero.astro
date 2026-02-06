@@ -1,0 +1,32 @@
+---
+import { getMessages } from '../i18n/ui'
+
+export interface Props {
+  locale?: string
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class='flex items-center justify-center h-full md:h-screen'>
+  <div class='max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-5'>
+    <header>
+      <h1 class='text-6xl font-bold'>{t.text_1}</h1>
+      <p
+        class='bg-linear-to-bl from-violet-900 via-violet-800 to-purple-500 bg-clip-text text-transparent font-bold text-4xl my-4'
+      >
+        Full stack developer
+      </p>
+      <p><code>console.log('{t.letscreate}')</code></p>
+    </header>
+    <figure>
+      <img
+        src='/fabian_yapura.png'
+        alt='Fabian Yapura Claros - Full stack developer'
+        class='w-full mask-b-from-95% to-transparent scale-x-[-1] pointer-events-none'
+      />
+      <figcaption class='sr-only'>Fabian Yapura Claros</figcaption>
+    </figure>
+  </div>
+</section>

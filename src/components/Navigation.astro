@@ -1,0 +1,142 @@
+---
+import { getMessages, normalizeLocale, type AppLocale } from '../i18n/ui'
+import { getRoute } from '../i18n/routes'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+
+const locale = normalizeLocale(Astro.props.locale ?? Astro.currentLocale)
+const t = getMessages(locale)
+
+const menuItems = [
+  { key: 'home', label: t.menu.home },
+  { key: 'about', label: t.menu.about },
+  { key: 'projects', label: t.menu.projects },
+  { key: 'experience', label: t.menu.experience },
+  { key: 'contact', label: t.menu.contact },
+]
+---
+
+<header
+  class='sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800'
+>
+  <div class='max-w-6xl mx-auto px-4'>
+    <div class='flex items-center justify-between h-16 lg:h-20'>
+      <!-- Logo / Brand -->
+      <a
+        href={getRoute(locale, 'home')}
+        class='text-xl lg:text-2xl font-bold text-white hover:text-purple-400 transition-colors flex items-center gap-2'
+      >
+        FYC
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
+          class='size-6'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5'
+          ></path>
+        </svg>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class='hidden md:flex items-center gap-8'>
+        <ul class='flex gap-6 lg:gap-8'>
+          {
+            menuItems.map((item) => (
+              <li>
+                <a
+                  href={getRoute(locale, item.key)}
+                  class='text-gray-300 hover:text-white transition-colors font-medium relative group'
+                >
+                  {item.label}
+                  <span class='absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300' />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <LanguageSwitcher />
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id='mobile-menu-btn'
+        class='md:hidden text-gray-300 hover:text-white transition-colors p-2'
+        aria-label='Toggle menu'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-6 w-6'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M4 6h16M4 12h16M4 18h16'></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id='mobile-menu' class='md:hidden hidden border-t border-gray-800'>
+      <ul class='py-4 space-y-1'>
+        {
+          menuItems.map((item) => (
+            <li>
+              <a
+                href={getRoute(locale, item.key)}
+                class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors rounded-lg'
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li class='px-4 pt-2'>
+          <LanguageSwitcher />
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn')
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden')
+  })
+
+  // Cerrar menú al hacer click en un link
+  const mobileLinks = mobileMenu?.querySelectorAll('a')
+  mobileLinks?.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden')
+    })
+  })
+
+  // Cerrar menú al hacer scroll
+  let lastScroll = 0
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      mobileMenu?.classList.add('hidden')
+    }
+    lastScroll = currentScroll
+  })
+</script>
+
+<style>
+  /* Smooth scroll para los links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

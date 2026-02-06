@@ -1,0 +1,15 @@
+---
+import { SCORE_API_ENDPOINT } from 'astro:env/server'
+
+interface Props {
+  label?: string
+}
+
+const { label = 'Score' } = Astro.props
+const res = await fetch(SCORE_API_ENDPOINT)
+const scoreValue = await res.text()
+---
+
+<span class='text-lg text-white' id='score'>
+  🌟{label}: {scoreValue.trim()}/5
+</span>

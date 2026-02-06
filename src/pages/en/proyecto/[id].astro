@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content'
+import ProyectDetail from '../../../components/ProyectDetail.astro'
+import Layout from '../../../layouts/Layout.astro'
+import { getMessages } from '../../../i18n/ui'
+
+const copy = getMessages('en')
+
+export async function getStaticPaths() {
+  const proyects = await getCollection('proyects')
+
+  return proyects
+    .filter((entry) => entry.id.startsWith('en/'))
+    .map((proyect) => ({
+      params: { id: proyect.slug.replace('en/', '') },
+      props: { proyect },
+    }))
+}
+
+interface Props {
+  proyect: CollectionEntry<'proyects'>
+}
+
+const { proyect } = Astro.props
+
+export const prerender = true
+---
+
+<Layout
+  title={`${proyect.data.title} - ${copy.pageSuffix}`}
+  description={proyect.data.description}
+>
+  <ProyectDetail proyect={proyect} locale='en' />
+</Layout>
