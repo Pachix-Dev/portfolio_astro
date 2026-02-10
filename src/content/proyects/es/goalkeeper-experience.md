@@ -5,7 +5,7 @@ description: Una app moderna para la gestión integral del entrenamiento de port
 link: http://143.255.58.210:3001/es
 repo: https://github.com/Pachix-Dev/goalkeeper-training-app
 image: /goalkeppertraining.png
-tags: []
+tags: [WebApp, training]
 featured: true
 date: 2025-08-10
 role: Lead Developer

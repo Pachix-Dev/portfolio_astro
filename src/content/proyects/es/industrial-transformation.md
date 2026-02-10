@@ -5,7 +5,7 @@ description: Sitio web elegante creado en Astro. Diseñado para startups moderna
 link: https://industrialtransformation.mx/
 repo: https://github.com/Pachix-Dev/itm_2024.git
 image: https://industrialtransformation.mx/itm_2025_esp.webp
-tags: []
+tags: [Website', 'marketing']
 featured: true
 date: 2025-08-10
 role: Lead Developer

@@ -5,7 +5,7 @@ description: Elegant website built on Astro. Designed for modern startups and di
 link: https://industrialtransformation.mx/
 repo: https://github.com/Pachix-Dev/itm_2024.git
 image: https://industrialtransformation.mx/itm_2025_eng.webp
-tags: []
+tags: [Website', 'marketing']
 featured: true
 date: 2025-08-10
 role: Lead Developer

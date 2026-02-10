@@ -1,11 +1,11 @@
 ---
 locale: es
 title: RE+ Mexico
-description: Un concepto elegante de sitio web, creado en Astro. Diseñado para startups modernas y productos digitales, cuenta con un sistema registro para visitantes, genera gafetes digitales y envío automatizado.
+description: Un concepto elegante de sitio web, creado en Astro. Diseñado para startups modernas y productos digitales, cuenta con un sistema registro para visitantes, pasarela de pagos, genera gafetes digitales y envío automatizado.
 link: https://re-plus-mexico.com.mx/
 repo: https://github.com/Pachix-Dev/renewEnergyPlus.git
 image: /replusbg_eng.jpg
-tags: []
+tags: [Website', 'marketing']
 featured: true
 date: 2025-04-14
 role: Lead Developer

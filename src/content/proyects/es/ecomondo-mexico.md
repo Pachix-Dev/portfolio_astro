@@ -4,7 +4,7 @@ title: Ecomondo Mexico
 description: Un concepto elegante de sitio web, creado en Astro. Diseñado para startups modernas y productos digitales, cuenta con un sistema registro para visitantes, genera gafetes digitales y envío automatizado.
 link: https://ecomondomexico.com.mx/
 image: /ecomondoweb.png
-tags: []
+tags: [Website', 'marketing']
 featured: true
 date: 2025-04-14
 role: Lead Developer

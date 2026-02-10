@@ -5,7 +5,7 @@ description: A modern app for comprehensive goalkeeper training management, allo
 link: https://industrialtransformation.mx/
 repo: https://github.com/Pachix-Dev/goalkeeper-training-app
 image: /goalkeppertraining.png
-tags: []
+tags: [WebApp, training]
 featured: true
 date: 2025-08-10
 role: Lead Developer

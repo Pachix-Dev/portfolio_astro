@@ -1,10 +1,10 @@
 ---
 locale: en
 title: Ecomondo Mexico
-description: Sitio web moderno, con registro
+description: An elegant website concept, created in Astro. Designed for modern startups and digital products, it features a visitor registration system, generates digital badges, and offers automated mailing.
 link: https://ecomondomexico.com.mx/
 image: /ecomondoweb.png
-tags: []
+tags: [Website', 'marketing']
 featured: true
 date: 2025-04-14
 role: Lead Developer
