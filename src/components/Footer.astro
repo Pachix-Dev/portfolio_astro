@@ -32,7 +32,7 @@ const socialLinks = [
 ]
 ---
 
-<footer class='bg-gray-900 border-t border-gray-800'>
+<footer id='contact' class='bg-gray-900 border-t border-gray-800'>
   <div class='max-w-6xl mx-auto px-4 py-12'>
     <!-- Main Footer Content -->
     <div class='flex justify-between gap-8 mb-12'>
@@ -58,7 +58,7 @@ const socialLinks = [
               menuItems.map((item) => (
                 <li>
                   <a
-                    href={getRoute(locale, item.key)}
+                    href={`#${item.key}`}
                     class='text-gray-400 hover:text-purple-400 transition-colors'
                   >
                     {item.label}
@@ -97,7 +97,7 @@ const socialLinks = [
               ></path>
             </svg>
           </a>
-          © {new Date().getFullYear()}
+          {new Date().getFullYear()}
         </p>
         <div class='flex flex-wrap gap-4'>
           {

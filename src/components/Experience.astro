@@ -17,14 +17,18 @@ const sortedExperiences = experiences.sort((a, b) => {
 })
 ---
 
-<section class='mt-20 py-12 max-w-6xl mx-auto px-5' aria-label='Experience'>
+<section
+  id='experience'
+  class='mt-20 py-12 max-w-6xl mx-auto px-5 scroll-mt-32'
+  aria-label='Experience'
+>
   <h2 class='text-4xl font-bold mb-12'>{t.experience}</h2>
   <ol class='relative border-s border-gray-700'>
     {
       sortedExperiences.map(async (exp) => {
         const { Content } = await render(exp)
         return (
-          <li class='mb-10 ms-6'>
+          <li class='mb-10 ms-6 timeline-view animate-blurred-fade-in animate-range-[entry_5%_contain_20%]'>
             <span class='absolute flex items-center justify-center w-6 h-6 bg-violet-600 rounded-full -start-3 ring-8 ring-gray-900'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

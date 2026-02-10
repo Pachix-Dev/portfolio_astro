@@ -13,7 +13,8 @@ const proyects = defineCollection({
         date: z.date().optional(),
         role: z.string().optional(),
         technologies: z.array(z.string()).optional(),
-        highlights: z.array(z.string()).optional(),        
+        highlights: z.array(z.string()).optional(),
+        color: z.string().optional(),       
     }),
 });
 

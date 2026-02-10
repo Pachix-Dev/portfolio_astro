@@ -31,6 +31,7 @@ const { Content } = await render(proyect)
 const routeId = slug.replace(`${locale}/`, '')
 
 const homeLink = locale === 'es' ? '/' : '/en/'
+const homeProjectsLink = `${homeLink}#${routeId}`
 
 const formattedDate = date
   ? new Date(date).toLocaleDateString(locale === 'en' ? 'en-US' : 'es-MX', {
@@ -52,7 +53,7 @@ const formattedDate = date
     <div class='relative max-w-6xl mx-auto px-4 py-16 sm:py-24'>
       <nav class='mb-8'>
         <a
-          href={homeLink}
+          href={homeProjectsLink}
           class='text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2'
         >
           <svg

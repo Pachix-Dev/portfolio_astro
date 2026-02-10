@@ -9,23 +9,222 @@ const { locale } = Astro.props
 const t = getMessages(locale)
 ---
 
-<section class='flex items-center justify-center h-full md:h-screen'>
+<section
+  id='home'
+  class='flex items-center justify-center h-full md:h-screen scroll-mt-32'
+>
   <div class='max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center gap-5'>
-    <header>
+    <header class='animate-fade-in'>
       <h1 class='text-6xl font-bold'>{t.text_1}</h1>
       <p
-        class='bg-linear-to-bl from-violet-900 via-violet-800 to-purple-500 bg-clip-text text-transparent font-bold text-4xl my-4'
+        class='bg-linear-to-bl from-violet-900 via-violet-600 to-violet-400 bg-clip-text text-transparent font-bold text-4xl my-4'
       >
         Full stack developer
       </p>
       <p><code>console.log('{t.letscreate}')</code></p>
     </header>
-    <figure>
+    <figure
+      class='animate-blurred-fade-in relative w-full h-100 md:h-125 flex items-center justify-center'
+    >
+      <svg
+        viewBox='0 0 839 829'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+        class='absolute top-0 right-0 opacity-70 w-72 z-0'
+        ><path
+          d='M208.657 498.548L225.513 499.032L230.168 514.126L213.53 514.354L208.657 498.548Z'
+          fill='#F4A949'
+          transform-origin='219.4124984741211px 506.4510040283203px'
+          style='transform: none; transform-origin: 219.412px 506.451px;'
+        ></path><path
+          d='M235.077 498.261L251.912 498.75L256.557 513.838L239.929 514.075L235.077 498.261Z'
+          fill='#F4A949'></path><path
+          d='M307.426 397.259L421.855 398.512L426.499 413.615L312.283 413.065L307.426 397.259Z'
+          fill='#9C27B0'
+          transform-origin='366.9624938964844px 405.43699645996094px'
+          style='transform: none; transform-origin: 366.962px 405.437px;'
+        ></path><path
+          d='M236.524 464.625L350.959 465.876L355.613 480.976L241.382 480.431L236.524 464.625Z'
+          fill='#1C5F9A'></path><path
+          d='M164.68 329.319L379.912 331.535L384.559 346.641L169.537 345.122L164.68 329.319Z'
+          fill='#1C5F9A'
+          transform-origin='274.61949157714844px 337.97999572753906px'
+          style='transform: none; transform-origin: 274.619px 337.98px;'
+        ></path><path
+          d='M315.424 361.578L530.632 363.8L535.287 378.898L320.264 377.381L315.424 361.578Z'
+          fill='#1C5F9A'></path><path
+          d='M272.653 396.776L289.498 397.256L294.142 412.351L277.522 412.579L272.653 396.776Z'
+          fill='#F4A949'
+          transform-origin='283.3975067138672px 404.67750549316406px'
+          style='transform: none; transform-origin: 283.398px 404.678px;'
+        ></path><path
+          d='M150.644 396.443L265.097 397.694L269.74 412.787L155.518 412.252L150.644 396.443Z'
+          fill='#1C5F9A'></path><path
+          d='M371.415 464.065L532.437 464.547L537.092 479.643L376.284 479.866L371.415 464.065Z'
+          fill='#F4A949'></path><path
+          d='M512.791 498.473L824.945 498.049L829.587 513.153L517.661 514.272L512.791 498.473Z'
+          fill='#9C27B0'></path><path
+          d='M385.622 429.213L614.965 427.93L619.618 443.028L390.483 445.025L385.622 429.213Z'
+          fill='#9C27B0'
+          transform-origin='502.6199951171875px 436.4774932861328px'
+          style='transform: none; transform-origin: 502.62px 436.477px;'
+        ></path><path
+          d='M245.346 363.214L294.138 363.402L298.783 378.499L250.217 379.024L245.346 363.214Z'
+          fill='#9C27B0'
+          transform-origin='272.06449127197266px 371.1189880371094px'
+          style='transform: none; transform-origin: 272.064px 371.119px;'
+        ></path><path
+          d='M116.528 296.579L261.58 295.665L266.226 310.754L121.394 312.371L116.528 296.579Z'
+          fill='#1C5F9A'
+          transform-origin='191.37700653076172px 304.01800537109375px'
+          style='transform: none; transform-origin: 191.377px 304.018px;'
+        ></path><path
+          d='M360.715 295.852L708.092 292.363L712.742 307.46L365.578 311.656L360.715 295.852Z'
+          fill='#1C5F9A'
+          transform-origin='536.7285003662109px 302.00950622558594px'
+          style='transform: none; transform-origin: 536.729px 302.01px;'
+        ></path><path
+          d='M278.465 295.126L345.554 295.501L350.194 310.596L283.331 310.943L278.465 295.126Z'
+          fill='#F4A949'></path><path
+          d='M39.6893 296.672L106.789 297.02L111.441 312.117L44.5643 312.46L39.6893 296.672Z'
+          fill='#1C5F9A'></path><path
+          d='M89.264 330.329L156.347 330.696L160.994 345.8L94.1232 346.141L89.264 330.329Z'
+          fill='#9C27B0'
+          transform-origin='125.12900161743164px 338.23500061035156px'
+          style='transform: none; transform-origin: 125.129px 338.235px;'
+        ></path><path
+          d='M164.046 464.415L231.133 464.783L235.785 479.882L168.898 480.227L164.046 464.415Z'
+          fill='#9C27B0'
+          transform-origin='199.9155044555664px 472.3209991455078px'
+          style='transform: none; transform-origin: 199.916px 472.321px;'
+        ></path><path
+          d='M94.0035 364.215L234.347 364.657L239 379.77L98.8707 380.014L94.0035 364.215Z'
+          fill='#F4A949'></path><path
+          d='M70.7135 397.331L137.809 397.695L142.459 412.799L75.5792 413.14L70.7135 397.331Z'
+          fill='#1C5F9A'></path><path
+          d='M141.758 430.922L363.133 429.239L367.776 444.342L146.622 446.733L141.758 430.922Z'
+          fill='#1C5F9A'
+          transform-origin='254.76699829101562px 437.9860076904297px'
+          style='transform: none; transform-origin: 254.767px 437.986px;'
+        ></path><path
+          d='M263.757 498.926L485.144 497.231L489.799 512.33L268.62 514.719L263.757 498.926Z'
+          fill='#1C5F9A'
+          transform-origin='376.7779998779297px 505.97499084472656px'
+          style='transform: none; transform-origin: 376.778px 505.975px;'
+        ></path><path
+          d='M91.3904 464.47L158.482 464.828L163.128 479.931L96.2502 480.273L91.3904 464.47Z'
+          fill='#F4A949'
+          transform-origin='127.25920486450195px 472.3715057373047px'
+          style='transform: none; transform-origin: 127.259px 472.372px;'
+        ></path><path
+          d='M135.153 497.873L200.47 498.742L205.114 513.843L140.026 513.671L135.153 497.873Z'
+          fill='#1C5F9A'
+          transform-origin='170.1334991455078px 505.8580017089844px'
+          style='transform: none; transform-origin: 170.133px 505.858px;'
+        ></path>
+      </svg>
+
       <img
         src='/fabian_yapura.png'
         alt='Fabian Yapura Claros - Full stack developer'
-        class='w-full mask-b-from-95% to-transparent scale-x-[-1] pointer-events-none'
+        class='w-full mask-b-from-95% to-transparent scale-x-[-1] pointer-events-none relative z-10'
       />
+
+      <svg
+        viewBox='0 0 903 887'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+        class='absolute bottom-0 left-0 opacity-50 w-60 z-0'
+        ><path
+          d='M47.2262 320.433L114.319 320.792L118.976 335.892L52.0914 336.238L47.2262 320.433Z'
+          fill='#F4A949'
+          transform-origin='83.10110092163086px 328.33551025390625px'
+          style='transform: none; transform-origin: 83.1011px 328.336px;'
+        ></path><path
+          d='M134.246 320.858L201.343 321.227L205.994 336.318L139.104 336.663L134.246 320.858Z'
+          fill='#1C5F9A'
+          transform-origin='170.12000274658203px 328.760498046875px'
+          style='transform: none; transform-origin: 170.12px 328.76px;'
+        ></path><path
+          d='M97.3566 353.899L164.437 354.261L169.088 369.365L102.209 369.702L97.3566 353.899Z'
+          fill='#1C5F9A'
+          transform-origin='133.22229766845703px 361.8004913330078px'
+          style='transform: none; transform-origin: 133.222px 361.8px;'
+        ></path><path
+          d='M221.413 321.768L485.765 322.185L490.419 337.284L226.28 337.562L221.413 321.768Z'
+          fill='#1C5F9A'
+          transform-origin='355.91600036621094px 329.6650085449219px'
+          style='transform: none; transform-origin: 355.916px 329.665px;'
+        ></path><path
+          d='M202.902 354.015L638.794 357.201L643.448 372.291L207.775 369.82L202.902 354.015Z'
+          fill='#9C27B0'
+          transform-origin='423.1750030517578px 363.1529998779297px'
+          style='transform: none; transform-origin: 423.175px 363.153px;'
+        ></path><path
+          d='M478.267 521.382L894.745 524.805L899.401 539.9L483.124 537.176L478.267 521.382Z'
+          fill='#1C5F9A'
+          transform-origin='688.8339996337891px 530.6410217285156px'
+          style='transform: none; transform-origin: 688.834px 530.641px;'
+        ></path><path
+          d='M177.996 354.168L194.845 354.651L199.501 369.748L182.857 369.972L177.996 354.168Z'
+          fill='#F4A949'
+          transform-origin='188.74850463867188px 362.0699920654297px'
+          style='transform: none; transform-origin: 188.749px 362.07px;'
+        ></path><path
+          d='M358.89 389.3L424.034 390.501L428.68 405.6L363.757 405.092L358.89 389.3Z'
+          fill='#F4A949'
+          transform-origin='393.7850036621094px 397.4499969482422px'
+          style='transform: none; transform-origin: 393.785px 397.45px;'
+        ></path><path
+          d='M299.752 487.208L316.603 487.687L321.258 502.79L304.619 503.005L299.752 487.208Z'
+          fill='#F4A949'
+          transform-origin='310.5050048828125px 495.10650634765625px'
+          style='transform: none; transform-origin: 310.505px 495.107px;'
+        ></path><path
+          d='M326.155 486.923L343.001 487.404L347.649 502.497L331.026 502.73L326.155 486.923Z'
+          fill='#F4A949'
+          transform-origin='336.90199279785156px 494.8265075683594px'
+          style='transform: none; transform-origin: 336.902px 494.827px;'
+        ></path><path
+          d='M107.698 387.455L222.122 388.706L226.773 403.81L112.567 403.258L107.698 387.455Z'
+          fill='#1C5F9A'
+          transform-origin='167.2354965209961px 395.6324920654297px'
+          style='transform: none; transform-origin: 167.235px 395.632px;'
+        ></path><path
+          d='M335.415 421.264L449.857 422.522L454.508 437.619L340.288 437.071L335.415 421.264Z'
+          fill='#1C5F9A'
+          transform-origin='394.9615020751953px 429.4414978027344px'
+          style='transform: none; transform-origin: 394.962px 429.441px;'
+        ></path><path
+          d='M175.659 487.91L290.087 489.164L294.747 504.27L180.515 503.712L175.659 487.91Z'
+          fill='#1C5F9A'
+          transform-origin='235.2030029296875px 496.0899963378906px'
+          style='transform: none; transform-origin: 235.203px 496.09px;'
+        ></path><path
+          d='M342.326 520.75L456.777 521.989L461.425 537.08L347.2 536.54L342.326 520.75Z'
+          fill='#1C5F9A'
+          transform-origin='401.87548828125px 528.9150085449219px'
+          style='transform: none; transform-origin: 401.875px 528.915px;'
+        ></path><path
+          d='M208.827 454.265L424.046 456.49L428.701 471.576L213.681 470.068L208.827 454.265Z'
+          fill='#1C5F9A'></path><path
+          d='M236.887 388.975L351.317 390.227L355.967 405.323L241.747 404.773L236.887 388.975Z'
+          fill='#1C5F9A'></path><path
+          d='M78.2267 421.127L145.324 421.484L149.974 436.587L83.0959 436.92L78.2267 421.127Z'
+          fill='#F4A949'></path><path
+          d='M156.512 420.877L317.531 421.363L322.181 436.463L161.364 436.688L156.512 420.877Z'
+          fill='#9C27B0'></path><path
+          d='M433.682 456.113L745.839 455.683L750.486 470.793L438.556 471.918L433.682 456.113Z'
+          fill='#9C27B0'></path><path
+          d='M131.938 454.719L199.041 455.071L203.696 470.177L136.815 470.523L131.938 454.719Z'
+          fill='#F4A949'></path><path
+          d='M117.207 488.433L165.999 488.62L170.638 503.714L122.08 504.239L117.207 488.433Z'
+          fill='#9C27B0'></path><path
+          d='M275.51 520.95L324.298 521.124L328.953 536.228L280.376 536.745L275.51 520.95Z'
+          fill='#9C27B0'></path><path
+          d='M109.231 521.806L254.295 520.887L258.947 535.998L114.098 537.606L109.231 521.806Z'
+          fill='#1C5F9A'></path></svg
+      >
       <figcaption class='sr-only'>Fabian Yapura Claros</figcaption>
     </figure>
   </div>

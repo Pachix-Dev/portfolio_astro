@@ -49,7 +49,7 @@ const menuItems = [
             menuItems.map((item) => (
               <li>
                 <a
-                  href={getRoute(locale, item.key)}
+                  href={`#${item.key}`}
                   class='text-gray-300 hover:text-white transition-colors font-medium relative group'
                 >
                   {item.label}
@@ -91,7 +91,7 @@ const menuItems = [
           menuItems.map((item) => (
             <li>
               <a
-                href={getRoute(locale, item.key)}
+                href={`#${item.key}`}
                 class='block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors rounded-lg'
               >
                 {item.label}
@@ -104,6 +104,10 @@ const menuItems = [
         </li>
       </ul>
     </nav>
+  </div>
+  <div
+    class='timeline-scroll animate-expand-horizontally sticky top-0 h-2 w-full origin-left bg-linear-to-r from-sky-300 to-sky-900'
+  >
   </div>
 </header>
 

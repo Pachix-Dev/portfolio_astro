@@ -10,12 +10,15 @@ const t = getMessages(locale)
 ---
 
 <section
-  class='max-w-6xl mx-auto grid md:grid-cols-2 gap-20 px-4'
+  id='about'
+  class='max-w-6xl mx-auto grid md:grid-cols-2 gap-20 px-4 scroll-mt-32'
   aria-label='About me'
 >
-  <div class='grid gap-4'>
+  <div
+    class='grid gap-4 timeline-view animate-fade-in-right animate-range-[entry_5%_contain_20%]'
+  >
     <div class='rounded-2xl shadow-2xl bg-[#04142B] px-10 py-5 space-y-4'>
-      <div class='text-purple-600 flex justify-between gap-2 items-center'>
+      <div class='text-purple-400 flex justify-between gap-2 items-center'>
         <span class='text-xl font-bold'>{t.cloudarchitecture}</span>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -37,7 +40,7 @@ const t = getMessages(locale)
       </p>
     </div>
     <div class='rounded-2xl shadow-2xl bg-[#04142B] px-10 py-5 space-y-4'>
-      <div class='text-purple-600 flex justify-between gap-2 items-center'>
+      <div class='text-purple-400 flex justify-between gap-2 items-center'>
         <span class='text-xl font-bold'>{t.webdevelopment}</span>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -59,7 +62,7 @@ const t = getMessages(locale)
       </p>
     </div>
     <div class='rounded-2xl shadow-2xl bg-[#04142B] px-10 py-5 space-y-4'>
-      <div class='text-purple-600 flex justify-between gap-2 items-center'>
+      <div class='text-purple-400 flex justify-between gap-2 items-center'>
         <span class='text-xl font-bold'>{t.problemsolving}</span>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -81,7 +84,9 @@ const t = getMessages(locale)
       </p>
     </div>
   </div>
-  <div>
+  <div
+    class='timeline-view animate-blurred-fade-in animate-range-[entry_10%_contain_30%]'
+  >
     <h2 class='text-gray-500 font-medium'>{t.aboutme}</h2>
     <article class='mt-4 space-y-4 leading-7 text-gray-300'>
       <p class='text-3xl font-bold'>{t.iam}</p>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import { getMessages, normalizeLocale, type AppLocale } from '../i18n/ui'
+import { skills } from '../data/skills'
 
 const locale = normalizeLocale(Astro.props.locale ?? Astro.currentLocale)
 const t = getMessages(locale)
@@ -12,79 +13,271 @@ const proyects = await getCollection('proyects', (entry) =>
 const baseUrl = locale === 'es' ? '/proyecto' : '/en/proyecto'
 ---
 
-<section class='mt-20' aria-label={t.featuredListLabel}>
-  <div class='max-w-6xl px-4 mx-auto'>
-    <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
-      <div class='grid gap-4'>
-        <div>
-          <h2 class='text-4xl font-bold mb-6'>
-            {t.featuredListLabel}
-          </h2>
-          <p class='text-gray-500'>soluciones para experiencias digitales</p>
+<section id="projects" class='mt-20 mb-20 scroll-mt-32' aria-label={t.featuredListLabel}>
+  <div class='max-w-7xl px-4 mx-auto '>
+
+    <!-- Featured Project Hero left -->
+    {
+      proyects.length > 0 && (
+        <div id={proyects[1].slug.replace(`${locale}/`, '')} class='mb-24 timeline-view animate-fade-in-up animate-range-[entry_5%_contain_25%] scroll-mt-32'>
+          <div class='grid lg:grid-cols-2 gap-12 items-center'>
+            <!-- Content Left -->
+            <div class='flex flex-col gap-6 '>
+              <div>
+                <span class='text-purple-400 text-sm font-bold uppercase tracking-wide'>
+                  {t.featuredListLabel}
+                </span>
+                <h2 class='text-5xl lg:text-6xl font-bold mt-4 leading-tight'>
+                  {proyects[1].data.title}
+                </h2>
+              </div>
+
+              <!-- Description Box -->
+              <div class="relative z-10 mb-6">
+                <div class='bg-linear-to-br from-white/5 to-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/10 shadow-lg lg:w-[calc(100%+20%)]'>
+                  <p class='text-gray-300 leading-relaxed text-lg text-shadow-lg'>
+                    {proyects[1].data.description}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Technologies -->
+              <div class='flex flex-wrap gap-3'>
+                {proyects[1].data.technologies?.map((tech) => {
+                  const skill = skills.find((s) => s.name === tech)
+                  return skill ? (
+                    <div
+                      class={`w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br ${skill.color} p-2.5 hover:scale-110 transition-transform duration-300`}
+                      title={skill.name}
+                    >
+                      <svg
+                        class='w-full h-full text-white'
+                        viewBox={skill.name === 'AWS' ? '0 0 16 16' : '0 0 24 24'}
+                        fill='currentColor'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path d={skill.icon} />
+                        {skill.icon2 ? <path d={skill.icon2} /> : null}
+                        {skill.icon3 ? <path d={skill.icon3} /> : null}
+                      </svg>
+                    </div>
+                  ) : null
+                })}
+              </div>
+
+              <!-- CTA -->
+              <a
+                href={`${baseUrl}/${proyects[1].slug.replace(`${locale}/`, '')}`}
+                class='inline-flex items-center gap-2 w-fit group'
+              >
+                <div class='w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='20'
+                    height='20'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                  >
+                    <path d='M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6' />
+                    <path d='M11 13l9 -9' />
+                    <path d='M15 4h5v5' />
+                  </svg>
+                </div>
+                <span class='text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-colors'>
+                  Ver proyecto
+                </span>
+              </a>
+            </div>
+
+            <!-- Image Right -->
+            <div class='relative group h-100 lg:h-125'>
+              <div class='absolute inset-0 bg-linear-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-3xl group-hover:blur-2xl transition-all duration-500' />
+              <img
+                transition:name={`img-${proyects[1].slug.replace(`${locale}/`, '')}`}
+                src={proyects[1].data.image}
+                alt={proyects[1].data.title}
+                class='w-full h-full object-cover object-left rounded-2xl border border-gray-800 group-hover:border-purple-500/50 transition-colors duration-500'
+              />
+            </div>
+          </div>
         </div>
-        {
-          proyects.map((proyect) => {
-            const routeId = proyect.slug.replace(`${locale}/`, '')
-            return (
-              <article class='proyect-card'>
-                <a href={`${baseUrl}/${routeId}`} rel='noopener noreferrer'>
-                  <img
-                    transition:name={`img-${routeId}`}
-                    src={proyect.data.image}
-                    alt={proyect.data.title}
-                  />
-                </a>
-              </article>
-            )
-          })
-        }
-      </div>
-      <div class='grid gap-4'>
-        <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
-            alt=''
-          />
+      )
+    }
+
+    <!-- Featured Project Hero right-->
+    {
+      proyects.length > 0 && (
+        <div id={proyects[4].slug.replace(`${locale}/`, '')} class='mb-24 timeline-view animate-fade-in-up animate-range-[entry_5%_contain_25%] scroll-mt-32'>
+          <div class='grid lg:grid-cols-2 gap-12 items-center'>
+            <!-- Image Right -->
+            <div class='relative group h-100 lg:h-125'>
+              <div class='absolute inset-0 bg-linear-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-3xl group-hover:blur-2xl transition-all duration-500' />
+              <img
+                transition:name={`img-${proyects[4].slug.replace(`${locale}/`, '')}`}
+                src={proyects[4].data.image}
+                alt={proyects[4].data.title}
+                class='w-full h-full object-cover rounded-2xl border border-gray-800 group-hover:border-purple-500/50 transition-colors duration-500'
+              />
+            </div>
+           
+            <!-- Content Left -->            
+             <div class='flex flex-col gap-6 '>
+              <div>
+                <span class='text-purple-400 text-sm font-bold uppercase tracking-wide'>
+                  {t.featuredListLabel}
+                </span>
+                <h2 class='text-5xl lg:text-6xl font-bold mt-4 leading-tight'>
+                  {proyects[4].data.title}
+                </h2>
+              </div>
+
+              <!-- Description Box -->
+              <div class="relative z-10 mb-6">
+                <div class='bg-linear-to-br from-white/5 to-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/10 shadow-lg lg:ml-[-20%]'>
+                  <p class='text-gray-300 leading-relaxed text-lg text-shadow-lg'>
+                    {proyects[4].data.description}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Technologies -->
+              <div class='flex flex-wrap gap-3'>
+                {proyects[4].data.technologies?.map((tech) => {
+                  const skill = skills.find((s) => s.name === tech)
+                  return skill ? (
+                    <div
+                      class={`w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br ${skill.color} p-2.5 hover:scale-110 transition-transform duration-300`}
+                      title={skill.name}
+                    >
+                      <svg
+                        class='w-full h-full text-white'
+                        viewBox={skill.name === 'AWS' ? '0 0 16 16' : '0 0 24 24'}
+                        fill='currentColor'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path d={skill.icon} />
+                        {skill.icon2 ? <path d={skill.icon2} /> : null}
+                        {skill.icon3 ? <path d={skill.icon3} /> : null}
+                      </svg>
+                    </div>
+                  ) : null
+                })}
+              </div>
+
+              <!-- CTA -->
+              <a
+                href={`${baseUrl}/${proyects[4].slug.replace(`${locale}/`, '')}`}
+                class='inline-flex items-center gap-2 w-fit group'
+              >
+                <div class='w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='20'
+                    height='20'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                  >
+                    <path d='M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6' />
+                    <path d='M11 13l9 -9' />
+                    <path d='M15 4h5v5' />
+                  </svg>
+                </div>
+                <span class='text-sm font-medium text-purple-400 group-hover:text-purple-300 transition-colors'>
+                  Ver proyecto
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
+      )
+    }
+
+    <!-- Other Projects Grid -->
+    {
+      proyects.length > 1 && (
         <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
-            alt=''
-          />
+          <h3 class='text-3xl font-bold mb-8'>Más proyectos</h3>
+          <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {
+              proyects.map((proyect, index) => {
+                const routeId = proyect.slug.replace(`${locale}/`, '')
+                return (
+                  <a
+                    href={`${baseUrl}/${routeId}`}
+                    class={`group relative overflow-hidden rounded-xl border border-gray-800 hover:border-purple-500/50 transition-all duration-300 h-80 bg-gray-900/50 timeline-[view(y_700px_auto)] animate-fade-in-up animate-range-[entry_${index * 10}%_cover_${index * 10 + 35}%]`}
+                  >
+                    <!-- Background Image -->
+                    <img
+                      src={proyect.data.image}
+                      alt={proyect.data.title}
+                      class='absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
+                    />
+
+                    <!-- Overlay -->
+                    <div class='absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent group-hover:from-gray-900 group-hover:via-gray-900/60' />
+
+                    <!-- Content -->
+                    <div class='relative h-full flex flex-col justify-between p-6'>
+                      <!-- Top Icon -->
+                      <div class='flex justify-end'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='20'
+                          height='20'
+                          viewBox='0 0 24 24'
+                          fill='none'
+                          stroke='currentColor'
+                          stroke-width='2'
+                          class='opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+                        >
+                          <path d='M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6' />
+                          <path d='M11 13l9 -9' />
+                          <path d='M15 4h5v5' />
+                        </svg>
+                      </div>
+
+                      <!-- Bottom Content -->
+                      <div class='flex flex-col gap-3'>
+                        <h3 class='text-xl font-bold leading-tight'>
+                          {proyect.data.title}
+                        </h3>
+                        <p class='text-gray-300 text-sm line-clamp-2'>
+                          {proyect.data.description}
+                        </p>
+                        <div class='flex flex-wrap gap-2 pt-2'>
+                          {proyect.data.technologies?.map((tech) => {
+                            const skill = skills.find((s) => s.name === tech)
+                            return skill ? (
+                              <div
+                                class={`w-7 h-7 flex items-center justify-center rounded-md bg-linear-to-br ${skill.color} p-1`}
+                                title={skill.name}
+                              >
+                                <svg
+                                  class='w-full h-full text-white'
+                                  viewBox='0 0 24 24'
+                                  fill='currentColor'
+                                  xmlns='http://www.w3.org/2000/svg'
+                                >
+                                  <path d={skill.icon} />
+                                  {skill.icon2 ? <path d={skill.icon2} /> : null}
+                                </svg>
+                              </div>
+                            ) : null
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                )
+              })
+            }
+          </div>
         </div>
-        <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
-            alt=''
-          />
-        </div>
-      </div>
-      <div class='grid gap-4'>
-        <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
-            alt=''
-          />
-        </div>
-        <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
-            alt=''
-          />
-        </div>
-        <div>
-          <img
-            class='h-auto max-w-full rounded-base'
-            src='https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
-            alt=''
-          />
-        </div>
-      </div>
-    </div>
+      )
+    }
   </div>
 </section>
