@@ -118,6 +118,7 @@ SCORE_API_ENDPOINT="https://tu-endpoint.example"
 ## Deployment Notes / Notas de despliegue
 
 ES: El proyecto usa `@astrojs/node` en modo standalone. El build genera un server Node listo para desplegar.
+
 EN: Uses `@astrojs/node` in standalone mode. Build output is a ready-to-deploy Node server.
 
 ## License / Licencia
