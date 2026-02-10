@@ -57,6 +57,7 @@ EN: Collections are defined in [src/content/config.ts](src/content/config.ts). C
 ### Add a project / Agregar un proyecto
 
 ES: Crea un archivo en [src/content/proyects/es](src/content/proyects/es) o [src/content/proyects/en](src/content/proyects/en) con frontmatter como este.
+
 EN: Create a file in the same folders with frontmatter like this.
 
 ```md
@@ -80,6 +81,7 @@ color: '#1f2937'
 ### Add experience / Agregar experiencia
 
 ES: Crea un archivo en [src/content/experience/es](src/content/experience/es) o [src/content/experience/en](src/content/experience/en).
+
 EN: Create a file in the same folders with frontmatter like this.
 
 ```md
@@ -108,8 +110,9 @@ technologies: ['React', 'TypeScript', 'Astro']
 
 ## Environment Variables / Variables de entorno
 
-ES: Se usa la variable publica `SCORE_API_ENDPOINT`.
-EN: Public env var `SCORE_API_ENDPOINT` is used.
+ES: Se usa la variable publica `SCORE_API_ENDPOINT` para la puntuación random en proyectos.
+
+EN: Public env var `SCORE_API_ENDPOINT` is used for random scoring in projects.
 
 ```sh
 SCORE_API_ENDPOINT="https://tu-endpoint.example"
