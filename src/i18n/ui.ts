@@ -13,7 +13,8 @@ export const messages = {
       contact: 'Contacto'
     },
     text_1: 'Hola, soy Fabian',  
-    letscreate: '¡Vamos a crear algo increíble juntos!',  
+    letscreate: '¡Vamos a crear algo increíble juntos!',
+    hireme: 'Contrátame',  
     siteTitle: 'Fabian Yapura Claros',
     siteDescription: 'Lista de proyectos realizados',
     featuredListLabel: 'Proyectos destacados',
@@ -60,6 +61,7 @@ export const messages = {
     },
     text_1: "Hello, I'm Fabian",
     letscreate: "Let's create something amazing together!",
+    hireme: 'Hire me',
     siteTitle: 'Fabian Yapura Claros',
     siteDescription: 'List of completed projects',
     featuredListLabel: 'Featured projects',
