@@ -5,6 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 import node from '@astrojs/node';
 
+import sitemap from '@astrojs/sitemap';
+
+import robotsTxt from 'astro-robots-txt';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
@@ -29,5 +33,7 @@ export default defineConfig({
 
   adapter: node({
     mode: 'standalone'
-  })
+  }),
+
+  integrations: [sitemap(), robotsTxt()]
 });
