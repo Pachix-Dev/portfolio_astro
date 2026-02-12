@@ -37,6 +37,6 @@ export default defineConfig({
   adapter: node({
     mode: 'standalone'
   }),
-
+  site: "https://yapura.dev",
   integrations: [sitemap(), robotsTxt()]
 });
