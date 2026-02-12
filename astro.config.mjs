@@ -12,7 +12,10 @@ import robotsTxt from 'astro-robots-txt';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-
+  server: {
+    host: '0.0.0.0',
+    port: 3013
+  },
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es',
