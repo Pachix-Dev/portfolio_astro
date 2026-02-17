@@ -1,13 +1,14 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
-import { normalizeLocale } from '../i18n/ui'
+import { normalizeLocale, getMessages } from '../i18n/ui'
 import Navigation from '../components/Navigation.astro'
 import Footer from '@/components/Footer.astro'
 
 const locale = normalizeLocale(Astro.currentLocale)
-const title = Astro.props.title ?? 'Portfolio'
-const description = Astro.props.description ?? ''
+const messages = getMessages(locale)
+const title = Astro.props.title ?? messages.siteTitle
+const description = Astro.props.description ?? messages.siteDescription
 ---
 
 <!doctype html>
@@ -17,17 +18,35 @@ const description = Astro.props.description ?? ''
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='icon' type='image/png' href='/fabian_yapura.png' />
     <link rel='icon' href='/fabian_yapura.png' />
+    <link rel='canonical' href='https://yapura.dev/' />
     <meta name='generator' content={Astro.generator} />
     <meta name='description' content={description} />
     <title>{title}</title>
+    <meta
+      name='keywords'
+      content='portfolio, Fabian Yapura Claros, web developer, proyectos, experiencia, skills'
+    />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://yapura.dev/' />
+    <meta property='og:image' content='/fabian_yapura.png' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content='/fabian_yapura.png' />
     <ClientRouter />
   </head>
   <body>
-    <main>
+    <header>
       <Navigation />
+    </header>
+    <main>
       <slot />
-      <Footer />
     </main>
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
 
