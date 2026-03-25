@@ -1,5 +1,5 @@
 ---
-title: Backend and frontend web specialist
+title: IT MANAGER
 company: Hannover Fairs México
 location: On-site
 type: Full Time
@@ -16,6 +16,8 @@ responsabilities:
   - Development of a badge scanning system for immediate lead capture, real-time access to visitor contact information, implementation of a matchmaking system connecting exhibitors and visitors based on interests and business profile.
   - Management of domains, DNS, SSL certificates, firewalls and email services.
   - Automation of internal processes to improve operational efficiency of the sales and events team.
+  - Salesforce Marketing Cloud Implementation, configuration, and optimization of the platform for digital marketing strategies; campaign management in Email Studio and Web Studio; automation and journey design in Journey Builder; asset management in Content Builder; and performance analysis using Analytics Builder. Einstein AI application for advanced segmentation, personalization, and conversion optimization.
+  - Microsoft 365 & Admin Center - Management of enterprise environments in Microsoft 365, including user management, licenses, domains, and security policies from the Microsoft 365 Admin Center. Configuration of services such as Exchange Online, Teams, SharePoint, and OneDrive, as well as support for governance, compliance, and optimizing organizational productivity.
 achievements:
   - Designed and implemented a proprietary digital platform for B2B events, centralizing registration, payments, stand contracting and lead generation.
   - Reduced operational costs by eliminating external providers through custom-built internal solutions.
@@ -32,6 +34,8 @@ technologies:
   - MySql
   - AWS
   - TypeScript
+  - Microsoft 365 & Admin Center
+  - Salesforce Marketing Cloud
 ---
 
 ## Vision

@@ -1,5 +1,5 @@
 ---
-title: Especialista web backend y frontend
+title: IT MANAGER
 company: Hannover Fairs México
 location: Presencial
 type: Tiempo Completo
@@ -16,6 +16,8 @@ responsabilities:
   - Desarrollo de un sistema de escaneo de gafetes (badge scanning) para, captura inmediata de leads, acceso a información de contacto de visitantes en tiempo real, implementación de un sistema de matchmaking, conectando expositores y visitantes según intereses y perfil de negocio.
   - Administración de dominios, DNS, certificados SSL, firewalls y servicios de correo.
   - Automatización de procesos internos para mejorar la eficiencia operativa del equipo comercial y de eventos.
+  - Implementación y gestión de Salesforce Marketing Cloud responsable de la instalación, configuración y optimización de la plataforma Salesforce Marketing Cloud para estrategias de marketing digital. Gestión y ejecución de campañas a través de Email Studio y Web Studio, diseño de journeys automatizados en Journey Builder, administración de contenidos en Content Builder y análisis de resultados mediante Analytics Builder. Aplicación de capacidades de Einstein AI para segmentación, personalización y mejora del performance de campañas. Participación activa en capacitaciones especializadas para adopción y mejora continua de la herramienta.
+  - Microsoft 365 & Admin Center - Administración de entornos empresariales en Microsoft 365, gestión de usuarios, licencias, dominios y políticas de seguridad desde Microsoft 365 Admin Center. Configuración de servicios como Exchange Online, Teams, SharePoint y OneDrive, así como soporte en gobernanza, cumplimiento y optimización de la productividad organizacional.
 achievements:
   - Diseñé e implementé una plataforma digital propia para eventos B2B, centralizando registro, pagos, contratación de stands y generación de leads.
   - Reduje costos operativos al eliminar proveedores externos mediante soluciones internas desarrolladas a la medida.
@@ -32,6 +34,8 @@ technologies:
   - MySql
   - AWS
   - TypeScript
+  - Microsoft 365 & Admin Center
+  - Salesforce Marketing Cloud
 ---
 
 ## Visión

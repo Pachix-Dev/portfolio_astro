@@ -80,7 +80,7 @@ export const messages = {
     experience: 'Experience',
     aboutme: 'About me',
     iam: "Hello! I'm Fabian Yapura Claros",
-    aboutParagraph1: 'end-to-end digital solutions. Specialized in Full Stack development with React, Next.js, Astro, Node.js, and NestJS, as well as the design of scalable REST APIs, SPA and SSR architectures focused on performance, security, and user experience. Experience includes developing SaaS platforms, B2B solutions, e-commerce platforms, and high-traffic systems, integrating Generative',
+    aboutParagraph1: 'Systems Engineer with over 10 years of experience in software development, web architecture, and end-to-end digital solutions. Specialized in Full Stack development with React, Next.js, Astro, Node.js, and NestJS, as well as the design of scalable REST APIs, SPA and SSR architectures focused on performance, security, and user experience. Experience includes developing SaaS platforms, B2B solutions, e-commerce platforms, and high-traffic systems, integrating Generative Artificial Intelligence (LLM) technologies for process automation and intelligent content generation.',
     aboutParagraph2: 'I have participated in the development of SaaS platforms, B2B solutions, e-commerce platforms, and high-traffic systems, integrating Generative Artificial Intelligence (LLM) technologies for process automation and intelligent content generation. Additionally, I have experience in the implementation and optimization of Salesforce Marketing Cloud, as well as in the administration of enterprise environments in Microsoft 365, contributing to digital transformation, operational efficiency, and the improvement of marketing strategies and organizational productivity.',
 
     cloudarchitecture: 'Cloud Architecture',
